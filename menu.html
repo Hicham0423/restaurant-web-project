@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu | Savory Delights</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="menu-page">
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Savory Delights</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="search-container">
+                <button id="searchBtn" class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <div id="searchOverlay" class="search-overlay">
+                    <div class="search-content">
+                        <input type="text" id="searchInput" placeholder="Search for dishes, desserts, or drinks...">
+                        <button id="closeSearch" class="close-search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button id="cartBtn" class="cart-btn">
+                <i class="fas fa-shopping-cart"></i> Orders Selected <span id="cartCount">0</span>
+            </button>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <button id="backToTop" class="back-to-top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <section class="page-banner">
+        <div class="banner-content">
+            <h2>Our Menu</h2>
+            <p>Crafted with passion and the finest ingredients</p>
+        </div>
+    </section>
+
+    <section class="menu-section">
+        <div class="container">
+            <div class="menu-filters">
+                <div class="filter-group">
+                    <label>Category:</label>
+                    <select id="categoryFilter">
+                        <option value="all">All Categories</option>
+                        <option value="appetizers">Appetizers</option>
+                        <option value="main-courses">Main Courses</option>
+                        <option value="desserts">Desserts</option>
+                        <option value="drinks">Drinks</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Price Range:</label>
+                    <select id="priceFilter">
+                        <option value="all">All Prices</option>
+                        <option value="0-15">$0 - $15</option>
+                        <option value="15-30">$15 - $30</option>
+                        <option value="30+">$30+</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sort By:</label>
+                    <select id="sortFilter">
+                        <option value="name-asc">Name (A-Z)</option>
+                        <option value="name-desc">Name (Z-A)</option>
+                        <option value="price-asc">Price (Low to High)</option>
+                        <option value="price-desc">Price (High to Low)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2>Appetizers</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Bruschetta.jpg" alt="Bruschetta">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Bruschetta</h3>
+                            <span class="price">$12</span>
+                        </div>
+                        <p>Toasted artisan bread topped with fresh tomatoes, basil, and extra virgin olive oil</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Fritti.jpg" alt="Calamari Fritti">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Calamari Fritti</h3>
+                            <span class="price">$16</span>
+                        </div>
+                        <p>Crispy fried calamari served with lemon aioli and marinara sauce</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Arancini.jpg" alt="Mushroom Arancini">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Mushroom Arancini</h3>
+                            <span class="price">$14</span>
+                        </div>
+                        <p>Crispy risotto balls filled with wild mushrooms and mozzarella</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Stuffed Mushrooms.jpg" alt="Stuffed Mushrooms">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Stuffed Mushrooms</h3>
+                            <span class="price">$13</span>
+                        </div>
+                        <p>Portobello mushrooms filled with herbed breadcrumbs, garlic, and melted cheese</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Caprese Salad.jpg" alt="Caprese Salad">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Caprese Salad</h3>
+                            <span class="price">$15</span>
+                        </div>
+                        <p>Fresh mozzarella, vine-ripened tomatoes, and basil drizzled with balsamic glaze</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Garlic Bread.png" alt="Garlic Bread">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Garlic Bread</h3>
+                            <span class="price">$8</span>
+                        </div>
+                        <p>Artisan bread toasted with garlic butter and fresh herbs</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2>Main Courses</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/dish1.jpg" alt="Truffle Pasta">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Truffle Pasta</h3>
+                            <span class="price">$26</span>
+                        </div>
+                        <p>Handmade pasta with black truffle cream sauce and aged parmesan</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/dish2.jpg" alt="Herb-Crusted Salmon">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Herb-Crusted Salmon</h3>
+                            <span class="price">$32</span>
+                        </div>
+                        <p>Fresh Atlantic salmon with herb crust, served with seasonal vegetables</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Filet Mignon.jpg" alt="Filet Mignon">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Filet Mignon</h3>
+                            <span class="price">$44</span>
+                        </div>
+                        <p>Prime beef filet mignon grilled to perfection, served with garlic herb butter and seasonal vegetables.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Risotto ai Funghi.jpg" alt="Risotto ai Funghi">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Risotto ai Funghi</h3>
+                            <span class="price">$27</span>
+                        </div>
+                        <p>Creamy Arborio rice risotto with wild mushrooms, finished with parmesan and truffle oil.</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Margherita Pizza.jpg" alt="Margherita Pizza">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Margherita Pizza</h3>
+                            <span class="price">$18</span>
+                        </div>
+                        <p>Wood-fired pizza with fresh mozzarella, basil, and San Marzano tomatoes</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Chicken Alfredo.jpg" alt="Chicken Alfredo">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Chicken Alfredo</h3>
+                            <span class="price">$24</span>
+                        </div>
+                        <p>Fettuccine pasta with grilled chicken in a rich parmesan cream sauce</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Grilled Ribeye Steak.png" alt="Grilled Ribeye Steak">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Grilled Ribeye Steak</h3>
+                            <span class="price">$38</span>
+                        </div>
+                        <p>12oz prime ribeye steak with herb butter and roasted vegetables</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2>Desserts</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Chocolate Symphony.jpg" alt="Chocolate Symphony">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Chocolate Symphony</h3>
+                            <span class="price">$14</span>
+                        </div>
+                        <p>Decadent chocolate mousse with berry compote and gold leaf</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Tiramisu.jpg" alt="Tiramisu">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Tiramisu</h3>
+                            <span class="price">$12</span>
+                        </div>
+                        <p>Classic Italian dessert with layers of coffee-soaked ladyfingers and mascarpone cream</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Crème Brûlée.jpg" alt="Crème Brûlée">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Crème Brûlée</h3>
+                            <span class="price">$13</span>
+                        </div>
+                        <p>Vanilla bean custard with caramelized sugar crust</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Cheesecake.png" alt="New York Cheesecake">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>New York Cheesecake</h3>
+                            <span class="price">$12</span>
+                        </div>
+                        <p>Creamy classic cheesecake with graham cracker crust and berry compote</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Lemon Tart.png" alt="Lemon Tart">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Lemon Tart</h3>
+                            <span class="price">$11</span>
+                        </div>
+                        <p>Tangy lemon curd in a buttery pastry shell with fresh berries</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Panna Cotta.jpg" alt="Panna Cotta">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Panna Cotta</h3>
+                            <span class="price">$10</span>
+                        </div>
+                        <p>Silky vanilla bean panna cotta with fresh fruit coulis</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-category">
+                <h2>Drinks</h2>
+                <div class="menu-items">
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Signature Cocktails.png" alt="Signature Cocktails">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Signature Cocktails</h3>
+                            <span class="price">$16</span>
+                        </div>
+                        <p>Ask your server about our seasonal craft cocktails</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Mojito.png" alt="Mojito">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Mojito</h3>
+                            <span class="price">$14</span>
+                        </div>
+                        <p>Classic mojito with fresh mint, lime, rum and soda water</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Coconut Drink.png" alt="Coconut Drink">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Coconut Drink</h3>
+                            <span class="price">$12</span>
+                        </div>
+                        <p>Refreshing coconut water with a splash of rum and fresh lime</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Iced Tea.png" alt="Iced Tea">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Iced Tea</h3>
+                            <span class="price">$6</span>
+                        </div>
+                        <p>Freshly brewed black tea with lemon and mint</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                    <div class="menu-item">
+                        <div class="menu-item-image">
+                            <img src="images/Espresso.jpg" alt="Espresso">
+                        </div>
+                        <div class="menu-item-header">
+                            <h3>Espresso</h3>
+                            <span class="price">$4</span>
+                        </div>
+                        <p>Rich and bold Italian-style espresso</p>
+                        <button class="add-to-cart-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Savory Delights</h2>
+                    <p>Fine Dining Experience</p>
+                </div>
+                <div class="footer-info">
+                    <div class="footer-hours">
+                        <h3>Hours</h3>
+                        <p>Monday - Friday: 5pm - 10pm</p>
+                        <p>Saturday - Sunday: 12pm - 11pm</p>
+                    </div>
+                    <div class="footer-contact">
+                        <h3>Contact</h3>
+                        <p>123 Gourmet Street, Foodville</p>
+                        <p>Phone: (555) 123-4567</p>
+                        <p>Email: info@savorydelights.com</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 Savory Delights. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="cart-modal">
+        <div class="cart-modal-content">
+            <span id="closeCart" class="close-cart"><i class="fas fa-times"></i></span>
+            <h2>Your Selected Orders</h2>
+            <ul id="cartItemsList" class="cart-items-list"></ul>
+            <button id="reserveTableBtn" class="reserve-table-btn">Reserve a Table</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
