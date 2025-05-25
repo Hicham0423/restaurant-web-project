@@ -145,9 +145,12 @@ document.addEventListener('DOMContentLoaded', function() {
     const sortFilter = document.getElementById('sortFilter');
 
     function filterMenu() {
-        const selectedCategory = categoryFilter.value;
+        let selectedCategory = categoryFilter.value;
         const selectedPrice = priceFilter.value;
         const selectedSort = sortFilter.value;
+
+        // Normalize selectedCategory for comparison
+        selectedCategory = selectedCategory.replace(/-/g, ' ');
 
         // First, hide all menu items
         menuItems.forEach(item => {
@@ -169,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
             let showItem = true;
 
             // Category filter
-            if (selectedCategory !== 'all' && !category.includes(selectedCategory)) {
+            if (selectedCategory !== 'all' && category !== selectedCategory) {
                 showItem = false;
             }
 
